@@ -148,3 +148,137 @@ int main() {
 //
 //	return 0;
 //}
+/*选择语句
+int	main() {
+	int input = 0;
+	printf("打开哔哩哔哩\n");
+	printf("你会好好学C吗？（1/0）>:");
+	scanf("%d", &input);
+	if (input == 1) {  //一个= 为赋值，两个==为判断是否相等。
+		printf("考研上岸\n");
+	}
+	else
+	{
+		printf("回家卖红薯");
+	}
+
+	return 0;
+
+}
+*/
+
+
+//int main() {
+//	int line = 0;
+//	printf("好好学习\n");
+//	while (line < 20000) {
+//		printf("哈哈哈哈哈:%d\n",line);
+//		line++;
+//	}
+//	if(line>=20000)
+//	printf("给你一巴掌");
+//	return 0;
+//}
+
+
+//函数
+//int Add(int x, int y) {//Add函数名称，为自定义函数；括号里的int是函数的参数；开头的int是返回值的类型；
+//	int z = x + y;
+//	return z;//函数体，完成给定的任务。
+//}
+//
+//int main() {
+//	int a = 10;
+//	int b = 20;
+//	int g = 100;
+//	int u = 90;
+//	int num = 0;
+//	num = add(a, b);
+//	num = add(g, u);
+//	printf("%d\n", num);
+//
+//	return 0;
+//}
+
+
+//数组:一组相同类型元素的集合；
+//int main() {
+//	int arr[10] = {1,2,3,4,5,6,7,8,9,10};//定义一个存放10个整数数字的数据。他的名字是ARR。
+//	//数据的下标从0开始，10个数据的下标从0开始到9，若有n个数据，则下标到n-1。
+//	//char ch[20];		float arr[25];
+//	//printf("%d\n", arr[5]);//以下表的方式访问元素。arr[下标]
+//	int i = 0;
+//	while (i < 10) {
+//		printf("%d\n", arr[i]);
+//		i++;
+//	}
+//	return 0;
+//}
+
+
+
+/*操作符
+int main() {
+
+	//int a = 5 % 2;//  %取模  /取商
+	//printf("%d", a);
+	//移位操作符		<<向左移动；>>向右移动；
+	int a = 1;
+	//整形占用4个字节=32个bit
+	//00000000000000000000000000000001;
+	int b = a << 2;
+	printf("%d\n", b);
+	printf("%d\n", a);//a的值不会变，
+	return 0;
+}
+
+int main() {
+
+	//（2进制）位操作；	& 按位与;一假即假，全真则真	|	按位或；	一真即真		^	按位异或；
+	//异或的计算方法：	对应的二进制位相同则为0；对应的二进制位相异则为1
+	int a = 3;
+	int b = 5;
+	int c = a | b;
+	printf("%d\n", c);
+	return 0;
+}
+*/
+
+//int main() {
+//
+//	//int a = 20;
+//	//a = 20;//一个等号为赋值。
+//	//a = a + 10;//等价于下一行
+//	//	a += 10;
+//	//a = a - 10;//等价与下一行
+//	//	a -= 10;
+//	//a = a & 2;//等价与下一行
+//	//	a &= 2;
+//		//复合赋值符；	+=;	-=;	/=;	%=;	>>=;		<<=;		<<=;		&=;	|=;	^=			
+//	//单目操作符；双目操作符；三目操作符
+//
+//	//int a = 10;
+//	//int b = 29;
+//	//a + b;//+左右两边都有操作数，所以是双目操作符。
+//	int a = 2;
+//	printf("%d\n", a); ；printf("%d\n", !a);//	！把假的变真，把真的变成假。
+//	//	- 取负值，&取地址符
+//
+//	return 0;
+//}
+
+
+int main() {
+	//int a = 10;
+	//printf("%d\n", sizeof(a));//计算变量/类型所占空间的大小。
+	//printf("%d\n", sizeof(int));
+	//printf("%d\n", sizeof a);
+	//printf("%d\n", sizeof (int));//括号不能省略
+
+	int arr[10] = { 0 };
+	int sz = 0;
+	printf("%d\n", sizeof(arr));//就是数组的元素个数		个数=数组总大小/每个元素的大小。
+	sz = sizeof(arr) / sizeof(arr[0]);
+	printf("sz = %d\n", sz);
+	return 0;
+}
