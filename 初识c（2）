@@ -1,0 +1,150 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+
+/*
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int num = 0;
+	scanf("%d%d", &a, &b);
+	num = a + b;
+	printf("%d\n", num);//两个数相加。
+	return 0;//scanf是层语言提供的函数，而scanf_s是vs编译器提供的，是平台提供的函数，没有跨平台性，多使用c语言提供的课跨平台的函数
+}
+*/
+
+
+/*
+int main() {
+	const int num = 4;//num变量，可变的量。const修饰常变量，下面再定义数值输出则会报错。不可在修改，
+	//const定义一个num变量，但是num本质上还是一个变量。
+	//3 = 5;	100;	3.14等//字面常量，一个直接的值。常量:生活中不变的量（身份证号，家庭地址）
+	printf("%d\n", num);
+	num = 8;
+	printf("%d", num);
+
+
+
+
+	const int n = 10;//n是变量，但是又有常属性，所以n为常变量
+	//int arr[n] = { 10 };
+	int n = 20;
+	printf("%d\n", n);
+	return 0;
+
+	}
+*/
+
+
+/*
+#define MAX 10//define 定义的标识符常量。
+
+int main (){
+	int arr[MAX] = { 0 };
+	printf("%d", MAX);
+
+
+	return 0;
+}
+*/
+
+
+/*
+		//枚举常量：一一列举出的常量
+		//性别：男，女，保密；		三原色：红，黄，蓝。等可以列举出来的量
+		//枚举关键——enum
+enum Sex 
+{
+	MALE,
+	FEMALE,
+	SECRET
+};
+//MALE;FEMALE;SECRET - 枚举常量
+
+int main() {
+	//enum Sex s = FEMALE;
+	printf("%d\n", MALE);//0
+	printf("%d\n", FEMALE);//1
+	printf("%d\n", SECRET);//2
+
+	return 0;
+}
+*/
+
+
+/*
+enum Color
+{
+	red,
+	black,
+	blue,
+	pink     //最后一个不加逗号
+};
+int main() {
+
+	enum	 Color color = blue;
+	color = red;
+	blue = 6;//枚举的常量不能改变，通过枚举出来的color变量可以改变
+
+	return 0;
+}
+*/
+
+/*
+//数据在计算机存储的时候，存储的是2进制。
+
+//字符串类型：由双引号“”引起来的字符就是字符串。
+int main() {
+	//" ";  "asdd";  "jflsdjvnlnr";
+	char arr1[] = "abc";//数组,还有一个\0字符。\0为结束的标志
+			//"abc" -- 'a','b','c','\0'   \0的值为0，也是结打印束的标志
+	char arr2[] = { 'a','b','c' ,0};//  \0不算输出的内容
+			
+	printf("%s\n", arr1);//%s输出字符串
+	printf("%s\n", arr2);//abc烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫烫贴-敲?   
+	return 0;
+}
+
+int main() {
+
+	char	 arr1[] = "abcd";
+	char arr2[] = { 'a','b','c','d' };
+	printf("%d\n", strlen(arr1));//strlen - string length - 计算字符串长度,并没有算\0，所以是4。  abcd\0  \0转义字符
+	printf("%d\n", strlen(arr2));//没有找到，会继续向后寻找\0，直到找到一个随机值，所以输出随机值。  abcdxxxxxxx,在后面加0，则是4
+	return 0;
+}
+*/
+
+
+/*	转义字符
+int main() {
+	printf("abc\n");//   \n换行;  \t水平制表符（tab）  
+	printf("abcn\n");//abcn
+//  加上//改变原本的意义
+	printf("c:\\test\\32\\test.c\n");//  用\来转义 转义字符的意思，让转义字符直接输出，而不是被转义
+	printf("Are you ok??\n");
+	printf("%c\n",'\'');//  '  
+	printf("%s","\"");//   "    
+	return 0;
+}
+
+
+
+int main() {
+	printf("%d\n", strlen("c:\\test\\32\\test.c"));//17
+	printf("%d\n", strlen("c:\test\32\test.c"));//13		\ddd 1-3个8进制数字   \dd表示2个16进制数字
+	//	\32作为8进制（0-7）代表的那个十进制数字，作为ASCII码值，输出对应的字符。
+	//	32 -- > 10进制 ->作为ASCII值代表的字符输出。
+	printf("%c\n",'\x61');//97对应的ASCII值：a
+	return 0;
+}
+*/
+
+  /**/  //只要遇到*/便结束
+//int main() {
+//	//printf("skdlsdf");加上//后便注释掉不会输出。
+//
+//	return 0;
+//}
