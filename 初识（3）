@@ -29,3 +29,69 @@ int main() {
 	//原→反，符号位不变，其他位按位取反，反码加1得到补码
 	return 0;
 }
+
+
+////加减操作符
+//int main() {
+//
+//	int a = 10;
+//	//int b = a++;//后置++，先赋值，a再加1；a =11,b=10
+//	//int b = ++a;//前置++，先赋值，再加1；a=11,b=11
+//	//int b = a--;//后置--，先赋值，在减1；a=9,b=10
+//	int b = --a;//前置--，先减1，再赋值；a=9,b=9
+//	printf("a=%d b=%d\n", a, b);
+//	return 0;
+//}
+
+
+//int main() {
+//	//int a = 3.14;//类型转换可能会丢失数据
+//	int a = (int)3.14;// (类型)强制类型转换
+//
+//	return 0;
+//}
+
+
+//逻辑操作符
+//int main() {
+//	//// 0 表示假，非0就是真； &&逻辑与
+//	//int a = 0;//a=1时，c=1
+//	//int b = 5;
+//	//int c = a && b;//a,b都是真c才为真
+//	
+//	int a = 1;
+//	int b = 0;
+//	int c = a || b;// ||逻辑或，一真为真，都为假才为假，一假也为真
+//	printf("%d", c);//0
+//	return 0;
+//}
+
+
+//条件操作符;三目操作符
+//int main() {
+//
+//	int a = 10;
+//	int b = 90;
+//	//   exp?exp1:exp2； (如果前面的表达式为真，则输出exp1，否则输出exp2)
+//	int max = 0;
+//	max = (a > b ? a : b);//=  if(a>b)    max=a;   else  max=b
+//	printf("%d", max);
+//	return 0;
+//}
+
+
+int ADD(int a, int b) {
+//	int z = 0;
+//	z = a + b;
+//	return z;
+//}
+//int main() {
+//	int arr[10] = { 0 };
+//	arr[4];//  []为下标引用操作符，从0开始第五个元素
+//	int a = 10;
+//	int b = 20;
+//	int sum = add(a, b);//  ()为函数的调用
+//
+//	return 0;
+//
+//}
