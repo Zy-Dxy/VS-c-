@@ -95,3 +95,59 @@ int ADD(int a, int b) {
 //	return 0;
 //
 //}
+
+
+//int main() {
+////	//register int a = 10;//  建议把a放进寄存器里;//局部变量,自动变量，自动销毁，自动使用auto
+////	int a = -10;
+////	a = 2;
+////	//int 定义的变量是有符号的
+////	//unsigned int num = -19;//  没有符号之分，输出为19
+////	//struct--结构体关键字
+////	//union--联合体，共用体，自己定义的变量名不可冲突
+//	//typedef - 类型定义 - 类型重定义
+//	/*	typedef unsigned int u_int;
+//		typedef int num = 20;
+//		u_int num2 = 20;*/
+//	
+//	return 0;
+//}
+//void test() {
+//	//int a = 1;局部变量执行一个循环之后消失，重新再定义
+//	static int a = 1;//静态的局部变量，不会因为代码块的结束而消失，而是保存下来不销毁。生命周期随main函数结束而结束
+//	//static  修饰局部变量，局部变量的生命周变长   
+// 修饰全局变量，改变可变量的作用域不可再外部声明，只能在静态的，自己所在的原文件中使用，
+// static改变了函数的作用域-不准确，改变了函数的链接属性。
+//	a++;
+//	printf("a = %d\n",a);
+//}
+//int main() {
+//	int i = 0;
+//	while (i < 5) {
+//		test();
+//		i++;
+//	}
+//
+//	return 0;
+//}
+
+
+//int main() {
+//
+//	//extern - 声明外部符号的全局变量
+//	extern int g_val;
+//	printf("%d\n", g_val);
+//	return 0;
+//}
+
+
+//声明外部函数
+//extern int Add(int, int);//
+//int main() {
+//
+//	int a = 10;
+//	int b = 20;
+//	int sum = Add(a, b);
+//	printf("sum = %d\n",sum);
+//	return 0;
+//}
