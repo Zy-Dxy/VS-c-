@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .center-div{
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body class="center-div">
+<h1>注册</h1>
+<hr>
+<form method ="POST" action = "123.php">
+    <label>用户名：</label><input type ="text" name = "username"/>
+    <br>
+    <label>密&nbsp;&nbsp;&nbsp;&nbsp;码：</label><input type="password" name="userpwd">
+    <br>
+    <label>性别：</label>
+        <input type="radio" value="男" name="single[]" required>
+        <label for="male">男</label>
+        <input type="radio" value="女" name="single[]" required>
+        <label for="female">女</label>
+  <br>
+
+    <label>邮箱：</label><input type ="text" name = "yx"/>
+    <br>
+        <label>所在城市：</label>
+        <select name="selectList">
+            <option>天津</option>
+            <option>南京</option>
+            <option>燕京</option>
+            <option>北京</option>
+            <option>故宫</option>
+        </select>
+        <br>
+        <label>爱好：</label><input type="checkbox" name="hobby[]" value="篮球"/>篮球
+        <input type="checkbox" name="hobby[]" value="跑步"/>跑步
+        <input type="checkbox" name="hobby[]" value="瑜伽"/>瑜伽
+        <input type="checkbox" name="hobby[]" value="音乐"/>音乐
+    <br>
+        <div><input type="submit" value="提交" class="btn"></div>
+</form>
+
+</body>
+</html>
+
+
+
+<?php
+header("Content-type:text/html; charset = UTF-8");
+$username=$_POST["username"];
+$userpwd=$_POST["userpwd"];
+$single = $_POST["single"];
+$yx =$_POST["yx"];
+$selectList = $_POST["selectList"];
+$hobby=$_POST["hobby"];
+$str=" ";
+$key = $single;
+  echo "用户名：".$_POST["username"];
+  echo "<br>";
+  echo "密码:".$_POST["userpwd"];
+  echo "<br>";
+ foreach ($single as $key => $value){
+     echo "性别：".$value;
+ }
+  echo "<br>";
+  echo "邮箱：".$_POST["yx"];
+  echo "<br>";
+  echo "所在城市：".$_POST["selectList"];
+  echo "<br>";
+  foreach ($hobby as $value){
+      $str .=$value ."&nbsp";
+  }
+  echo "爱好：".$str;
+?>
