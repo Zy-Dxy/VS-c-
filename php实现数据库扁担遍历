@@ -49,3 +49,65 @@ if ($result && $result->num_rows > 0) {
 }
 $conn->close();
 ?>
+
+//①加载数据文件
+<?php
+header("content-type:text/html;charset=utf-8");
+@$link=mysqli_connect("127.0.0.1","root","root","vrs");
+if (!$link){
+    die("数据库连接失败<br/>错误号：". mysqli_connect_errno()."<br/>错误信息：".mysqli_connect_error());
+}
+echo "数据库服务器链接成功！";
+?>
+//②<?php
+$link =require_once "1.php";
+$sql = "select * from vol_info";
+$result = mysqli_query($link, $sql);
+$dataArr = array();
+$dataArr = mysqli_fetch_all($result, MYSQLI_ASSOC);
+require_once "list.php";
+
+?>
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+    <meta charset="UTF-8">
+    <title>志愿者注册信息</title>
+</head>
+<style>
+    table{
+        width: 500px;
+        margin: 0 auto;
+    }
+    h2{
+        text-align: center;
+        color: #77ccff;
+    }
+    .blue{
+        background-color: #77ccff;
+    }
+</style>
+<body>
+<h2>志愿者注册信息</h2>
+<table width="100%">
+    <tr class="blue">
+        <th>姓名</th>
+        <th>出生年月</th>
+        <th>所属组织</th>
+        <th>注册时间</th>
+    </tr>
+<?php
+$dataArr=$_POST["dataArr"];
+    foreach($dataArr as $k=>$v){
+        ?>
+            <tr>
+                <td><?php echo $v["name"];?></td>
+                <td><?php echo $v["birth"];?></td>
+                <td><?php echo $v["org"];?></td>
+                <td><?php echo $v["reg_time"];?></td>
+            </tr>
+    }
+  <?php }  ?>
+</table>
+</body>
+</html>
