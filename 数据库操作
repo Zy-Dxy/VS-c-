@@ -1,0 +1,94 @@
+# # --1.查看MySQL服务器中的所有字符集。
+# show character set;
+# # 2.查看MySQL服务器中的所有校验规则。
+# show collation ;
+# # 3.创建一个名称为db01的数据库。
+# create database dbo1;
+# # 4.创建一个使用gbk字符集的数据库db02，校验规则使用gbk_bin。
+# create database dbo2 character set gbk collate gbk_bin;
+# # 5.显示创建数据库db02的指令。
+# show create database dbo2;
+# # 6.创建一个数据库db03，校验规则使用utf8_bin。
+# create database db03 collate utf8_bin;
+# # 7.删除数据库db02。
+# drop database if exists db02;
+# # 8.更改数据库db03的校验规则为utf8_general_ci。
+# alter database db03 collate utf8_general_ci;
+# # 9.更改数据库db01的字符集为gbk，校验规则为gbk_chinese_ci。
+# alter database dbo1 character set gbk;
+# # 10.使用数据库db01。
+# use dbo1;
+# # 11.查看MySQL服务器中所有数据库。
+#     show databases ;
+
+#       1：
+# 1、要求创建一名为“BookM”的数据库。
+# create database BookM;
+# # 2、要求创建一个使用gbk字符集的 “StuM”的数据库。
+# create database StuM character set gbk;
+# # 3、要求创建一个使用utf8字符集，并带校对规则为utf8_general_ci的“CK”数据库。
+# create database CK character set utf8 collate utf8_general_ci;
+# # 4、要求使用命令查看已经创建好的所有的数据库。
+# show databases ;
+# # 5、要求查看创建好的数据库CK的信息。
+# show create database CK;
+# # 6、将已经创建好的数据库CK的编码修改为gbk，校对规则为gbk_bin。
+# alter database CK character set gbk collate gbk_bin;
+# # 7、删除已经创建好的数据库CK。
+# drop database CK;
+
+
+#       2：
+# 1.写出创建user表的sql代码。
+# create database employee;
+# use employee;
+#
+# create table user(
+#     id int unsigned not null default 0 comment '学号',
+#     name varchar(60) not null default '' comment '姓名',
+#     sex enum('男','女') not null  comment '性别',
+#     birthday date not null comment '生日',
+#     job varchar(100) not null default '' comment '工作',
+#     entry_date date not null  comment '入职时间',
+#     salary decimal(10,2) not null comment '薪水',
+#     resume text comment '简历'
+# )engine=MyISAM;
+# # 2.在上面user表的基础上增加一个image字段，类型为varchar（100），要求在resume后面。
+# alter table user add column image varchar(100) after  resume;
+# # 3.交换job字段和entry_date字段的位置(即在user表中互换这两个字段的位置)。
+# ALTER TABLE user MODIFY COLUMN job VARCHAR(100) NOT NULL DEFAULT '' AFTER entry_date;
+# # 4.删除sex字段。
+# alter table user drop column sex;
+# # 5.表名改为emp。
+# rename table user to emp;
+# # 6.修改表的字符集为gbk。
+# alter table emp character set = gbk;
+# # 7.字段名name修改为username。
+# alter table emp change column name username varchar(60) not null default '';
+# # 8.修改job字段，使其长度为60。
+# alter table emp modify  column job varchar(60) not null default '';
+
+
+#   
+# 1.写出创建grade表的sql代码。
+# create database student;
+# use student;
+# create table grade(
+#     id int not null comment '学号',
+#     name varchar(20) not null comment '姓名',
+#     grade float not null default 0 comment '成绩'
+# )engine = innoDB;
+# # 2.显示表grade的结构。
+# describe grade;
+# # 3.修改字段名name为username。
+# alter table grade change name username varchar(20) not null ;
+# # 4.修改表的字符集为gbk。
+# alter table grade convert to character set gbk collate gbk_chinese_ci;
+# # 5.在name字段后加入age字段，类型为int(10)，默认值为0，可以为空，备注为“年龄”。
+# alter table grade add age int(10) not null default 0 after username;
+# # 6.删除age字段。
+# alter table grade drop column age;
+# # 7.修改username字段，使其长度为30。
+# alter table grade modify username varchar(30) not null ;
+# # 8.修改grade表名为chengji表。
+# rename table grade to chengji;
