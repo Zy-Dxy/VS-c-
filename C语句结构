@@ -1,0 +1,105 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+//语句：由一个分号；隔开的一句话。单独的分号也是一句话，但是是一个空语句。
+//分支语句（选择结构）
+
+//语法结构：
+/*if (表达式)
+		语句1；*/
+
+/*if (表达式)
+	语句1；
+else
+	语句2；	*/
+
+
+/*多分支：
+if(表达式1)
+		语句1;
+else if （表达式2）
+	语句2；
+else
+	语句3；*///只能执行一条语句。
+
+
+//int main() {
+//	int age = 100;
+//	scanf("%d", &age);
+	//if (age < 18)//判断表达式
+	//	printf("未成年\n");
+	//else if (18 <= age && age <= 28)
+
+	//	printf("青年\n");
+	//else if (29 <= age && age <= 58)
+	//	printf("壮年\n");
+	//else if (59 <= age && age <= 78)
+	//	printf("老年\n");
+	//else
+	//	printf("老不死\n");
+	
+			//表达方式不同，意思一样。
+	/*if (age  <18)
+	
+		printf("未成年\n");
+	
+	else
+	{
+		if (18 <= age && age <= 28)
+
+			printf("青年\n");
+		else if (29 <= age && age <= 58)
+			printf("壮年\n");
+		else if (59 <= age && age <= 78)
+			printf("老年\n");
+		else
+			printf("老不死\n");
+	}
+	return 0;
+}*/
+
+
+// 条件成立，使用多个代码块时，要使用大括号把多条语句括起来。
+//int main() {
+//
+//	int a = 20;
+//	int b = 24;
+//	int c = 2;
+//	if (a==0)
+//	{
+//		if (b == c)
+//			printf("hehe\n");
+//	}//没有括号，else使用最近原则，与他最近的if进行匹配。
+//	else
+//	{
+//		printf("haha\n");
+//	}
+//	return 0;
+//}
+
+
+////①
+//if (conditon)
+//{
+//	return x;
+//}return y;
+//
+////②
+//if (condition)
+//{
+//	return x;
+//}
+//else
+//{
+//	return y;
+//}
+
+//③
+//int main(){
+//int num = 5;
+//if (num == 5)//一个=是赋值，两个==是判断是否成立。
+//{
+//	printf("hehe\n");
+//}
+//return 0;
+//}
