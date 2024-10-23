@@ -1,0 +1,100 @@
+①create database BookM;
+use BookM;
+create table XS(
+    借书证号 char(8) not null comment '借书证号',
+    姓名 char(8) not null comment '姓名',
+    专业名 char(12) not null comment '专业名',
+    性别 enum('男','女') not null default '女',
+    出生时间 date not null ,
+    借书量 int(10) not null ,
+    照片 blob,
+    primary key (借书证号)
+);
+
+create table BOOK(
+  ISBN char(16) not null ,
+  书名 varchar(26) not null ,
+  作者 char(8) not null ,
+  出版社 char(20) not null ,
+  价格 float not null ,
+  复本量 int(10) not null ,
+  库存量 int(10) not null ,
+  primary key (ISBN)
+);
+
+create table JY(
+    借书证号 char(8) not null ,
+    ISBN char(16) not null ,
+    索书号 char(10) not null ,
+    借书时间 datetime not null
+);
+
+# （1）在表XS中增加1个新字段“逾期未还书数”， tinyint(4)类型、可以为NULL；
+alter table xs add column  逾期未还书数 tinyint(4) null ;
+# （2）在表XS中删除名为“逾期未还书数”的字段；
+alter table xs drop column 逾期未还书数;
+# （3）修改表XS中已有字段的属性：将 “姓名”的字段长度由原来的8改为10；将 “出生时间”的字段的数据类型由原来的date改为datetime.
+alter table xs modify column 姓名 char(10) not null ;
+alter table xs modify column 出生时间 datetime not null ;
+# （4）在JY表中添加字段“应还时间”，datetime类型.
+alter table jy add 应还时间 datetime null;
+# （5）在JY表中添加字段“是否归还”，其值为“是”或“否”
+alter table jy add column 是否归还 enum('是','否') null ;
+# （6）删除BOOK表中的字段“复本量”。
+alter table book drop column 复本量;
+drop database BookM;
+
+②
+create database stum;
+use stum;
+create table dept(
+    dno char(4) not null primary key ,
+    dname varchar(30) not null ,
+    dtel varchar(12)
+);
+
+create table students(
+    sno char(12) not null primary key ,
+    sname varchar(10) not null ,
+    ssex char(2) not null default '男',
+    sbirth date not null ,
+    spolitic enum('1','2','3') not null ,
+    sdept char(20) not null ,
+    sresume text,
+    spersoncard char(18) not null ,
+    check ( year(curdate())  - year(sbirth) < 30)
+);
+alter  table students add constraint fk_dept
+foreign key (sdept) references dept(dno);
+create table courses(
+    cno char(6) not null primary key ,
+    cname varchar(30) not null ,
+    cpno char(6),
+    credit tinyint check ( credit <=5 )
+);
+
+create  table sc(
+    sno char(12) not null ,
+    cno char(6) not null ,
+    grade float(6,2) check ( grade >= 0 AND grade <= 100),
+    primary key (sno,cno)
+);
+
+
+alter table sc add constraint fk_student
+foreign key (sno) references students(sno),
+    add constraint fk_course foreign key (sno) references courses(cno);
+# (1)修改students表，给政治面貌属性添加默认值为1。
+alter table students modify column spolitic enum('1','2','3') not null default '1';
+# (2)修改students表，给性别添加约束，约束性别只能是男或女。
+alter table students modify column ssex char(2) not null default '男',
+    add constraint chk_ssex check ( ssex in ('男','女'));
+# (3)修改students表，添加一个字段“senrolltime”，表示入学时间，数据类型为：timestamp,可以为空，且该字段的默认值为当天。（使用函数current_timestamp）
+alter table students add column senrolltime timestamp null  default current_timestamp;
+# (4)修改courses表，添加外码约束，外键是cpno，参照本表中的主键cno
+alter table courses add constraint fk_cpno foreign key (cpno) references courses(cno) on delete set null ;
+# (5)修改表courses，将“课程名称”字段定义为unique约束，约束名为“uk_cname”。
+alter table courses add constraint uk_cname unique (cname);
+# (6)删除上题中的所建的“uk_cname”约束。
+alter table courses drop index uk_cname;
+drop database stum;
