@@ -1,0 +1,52 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+
+//练习1：判断一个数是否为奇数。
+//int main() {
+//	int a = 0;
+//	int b = a % 2;
+//	scanf("%d", &a);
+//	if (b  ==1  )
+//		printf("这个数是奇数\n");
+//	else
+//		printf("这个数是偶数\n");
+//	
+//	return 0;
+//}
+
+//练习2：输出1到100的奇数。
+//int main() {
+//	
+//	for (int a = 1 ; a<= 100; a++) {
+//		if (a % 2 !=0)
+//		{
+//			printf("%d\n", a);
+//		}
+//	}
+//	return 0;
+//}
+
+
+//int main() {
+//	while (1)
+//	{
+//		printf("hehe\n");//无限循环。
+//	}
+//
+//
+//
+//	return 0;
+//}
+
+//int main() {
+//
+//	int ch = 0;
+//	//ctrl + z时，就终止
+//	while (( ch = getchar()) != EOF)//getcher出入putcher输出
+//		//eof-- end of file ->-1
+//	{
+//		putchar(ch);
+//	}
+//	return 0;
+//}
