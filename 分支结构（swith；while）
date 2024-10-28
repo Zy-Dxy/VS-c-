@@ -1,0 +1,98 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+
+//switch语句,通常用于多分支的结构。
+//语法格式：
+// switch (整形表达式) {   //必须为整型int
+//	语句项；（case1;case2）case语句必须为整型常量表达式。不能为变量。
+//}
+//	 break中断语句，swith语句可以
+
+
+//int main() {
+//	int day = 0;
+//	scanf("%d", &day);
+//	switch (day)
+//	{
+//	case 1://（入口）
+//			printf("星期一\n");
+//			printf("lalalala");//可以存在多个语句执行。
+//			break;//（出口）结束语句跳出循环。
+//	case 2:
+//			printf("星期二\n");
+//			break;
+//	case 3:
+//			printf("星期三\n");
+//			break;
+//	case 4:
+//			printf("星期四\n");
+//			break;
+//	case 5:
+//			printf("星期五\n");
+//			break;
+//	case 6:
+//			printf("星期六\n");
+//			break;
+//	case 7:
+//			printf("星期天\n");
+//			break;
+//	default://(顺序随便，放在任何地方都可以，建议放在最后面作为提示)
+//		printf("输入错误\n");
+//		break;
+//	}
+//
+//	return 0;
+//}
+
+
+//n为表达式，的值与某个case后面常量表达式 的值相等，那就直接只执行此case后的代码块。
+//int main() {
+//	int n = 1;
+//	int m = 2;
+//	switch (n)
+//	{
+//	case 1:m++;
+//	case 2:n++;
+//		case3:
+//		switch (n) 
+//		{//swith允许嵌套使用,当被测试的变量等于case中的常量时，case后跟的语句将直接被执行。进入的位置不同，执行的语句也不一样。
+//		case 1:
+//			n++;
+//		case 2:
+//			m++; 
+//			n++; 
+//			break;
+//		}
+//	case4:m++;
+//		break;
+//	default:
+//		break;
+//	}
+//	printf("m=%d,n=%d\n", m, n);
+//
+//	return 0;
+// }
+
+
+//int main() {
+//	//while (1)
+//	//{
+//	//	printf("hehe\n");//无限循环。
+//	//}
+//	int i = 1;
+//
+//	while (i <= 10) {//条件表达式
+//
+//		if (i == 5)
+//
+//			//break;//停止，跳出循环。
+//			continue;//死循环，i=5时，条件成立 跳出本次continue后的循环，继续下次循环判断是否符合条件表达式，i=5继续跳出循环，进入死循环
+//		printf("%d ", i);
+//		i++;
+//	}
+//
+//	return 0;
+//}
+
+//break与continue的区别：break停止所有的循环，直接终止循环，while中的break是直接用于永久终止循环的
+//continue,为跳出条件成立的本次循环，用于终止本次循环，直接跳转到while语句的判断部分，进行下一次的循环入口进行判断。
