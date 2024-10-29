@@ -50,3 +50,43 @@
 //	}
 //	return 0;
 //}
+
+
+// while()判断表达式，成立则进入循环，不成立则不进入循环。
+//int main() {
+//	char password[20] = { 0 };
+//	int ret = 0;
+//	int ch = 0;
+//	printf("请输入密码：");
+//	scanf("%s", password);//输入密码，并存放在password中。
+//	//缓冲区还剩余一个\n，
+//	//再次读取一个\n即可把内容清空。,在下面的geatchar（）中就可以默认等待不直接输出。
+//	//getchar();//由于空格和换行的读取会增加一个\n来直接读取，scan只会挥把空格之前的内容读取出去，剩余的内容则留在内容中继续下面执行
+//	while ((ch = getchar() != '\n')) {}
+//
+//	printf("请确认（Y/N）：");
+//	ret = getchar();//   Y/N,,在输入缓冲区的密码被scanf读取，要先把输入缓冲区的内容为空， 需要再加一个getchar（）把剩余的内容读完
+//	if (ret == 'Y')
+//	{
+//		printf("确认成功\n");
+//	}
+//	else {
+//		printf("放弃确认\n");
+//	}
+//	return 0;
+//}
+
+
+
+//int main() {
+//
+//	int ch = 0;
+//	while ((ch = getchar()) != EOF) {
+//		if (ch < '0' || ch>'9')
+//
+//			continue;
+//		putchar(ch);
+//
+//	}
+//	return 0;
+//}
